@@ -677,7 +677,7 @@ body::after {
     display: flex;
     align-items: center;
     gap: 32px;
-    padding: 28px 24px;
+    padding: 20px 24px;
     border-left: 2px solid rgba(255, 255, 255, 0.1);
     transition: border-color 0.3s, background 0.3s;
     position: relative;
@@ -713,21 +713,21 @@ body::after {
 
 .timeline-year {
     font-family: var(--font-heading);
-    font-size: 14px;
+    font-size: 17px;
     color: var(--orange);
     font-weight: 600;
-    min-width: 90px;
+    min-width: 100px;
 }
 
 .timeline-content h4 {
     font-family: var(--font-heading);
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 600;
     margin-bottom: 4px;
 }
 
 .timeline-content p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--gray);
     font-weight: 300;
 }
@@ -735,7 +735,7 @@ body::after {
 .timeline-thesis {
     margin-left: auto;
     font-family: var(--font-heading);
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 600;
     font-style: italic;
     letter-spacing: 0.5px;
