@@ -758,9 +758,11 @@ body::after {
 }
 
 .lang-name {
-    font-size: 14px;
-    font-weight: 500;
-    min-width: 80px;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    min-width: 100px;
 }
 
 .lang-bar {
@@ -781,9 +783,11 @@ body::after {
 }
 
 .lang-level {
-    font-size: 13px;
-    color: var(--gray);
-    font-weight: 400;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    color: var(--orange);
+    font-weight: 600;
+    letter-spacing: 1px;
     min-width: 24px;
 }
 
