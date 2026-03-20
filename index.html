@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxim Grachev — Project Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Glow line -->
+    <div class="glow-line"></div>
+
+    <!-- Cursor follower -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">MG</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="nav-menu" id="navMenu" aria-label="Menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-text" aria-hidden="true">MAXIM</div>
+        <div class="hero-inner">
+            <div class="hero-photo">
+                <div class="hero-photo-frame">
+                    <img src="photo.png" alt="Maxim Grachev">
+                </div>
+                <div class="hero-photo-decor"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="tag-dot"></span>
+                    <span>Available for projects</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line"><span class="title-word" data-text="MAXIM">MAXIM</span></span>
+                    <span class="title-line"><span class="title-word" data-text="GRACHEV">GRACHEV</span></span>
+                </h1>
+                <p class="hero-subtitle">Digital Project Manager & Business Developer</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Languages spoken</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>Project Management</span>
+            <span class="orange-fill">AI & Automation</span>
+            <span>Business Development</span>
+            <span class="orange-fill">Digital Solutions</span>
+            <span>Low-Code</span>
+            <span class="orange-fill">Agile/Scrum</span>
+            <span>Project Management</span>
+            <span class="orange-fill">AI & Automation</span>
+            <span>Business Development</span>
+            <span class="orange-fill">Digital Solutions</span>
+            <span>Low-Code</span>
+            <span class="orange-fill">Agile/Scrum</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section-container">
+            <div class="section-label">
+                <span class="label-number">01</span>
+                <span class="label-text">About</span>
+                <span class="label-line"></span>
+            </div>
+            <div class="about-grid">
+                <div class="about-left">
+                    <h2 class="char-reveal">I deliver digital projects<br><span class="text-orange">that drive results.</span></h2>
+                </div>
+                <div class="about-right">
+                    <p class="reveal-up">Project manager graduate from SKEMA Business School with international experience in digital project management. Passionate about workflow optimization via n8n, low-code solutions, and AI-driven tools.</p>
+                    <p class="reveal-up">Co-founder of a food tech startup and certified Agile practitioner. I combine multicultural perspective with technical expertise to deliver impactful projects across digital signage, SaaS, and AI-driven solutions.</p>
+                    <div class="about-skills reveal-up">
+                        <div class="skill-tag">Agile/Scrum</div>
+                        <div class="skill-tag">SQL</div>
+                        <div class="skill-tag">Power BI</div>
+                        <div class="skill-tag">Jira</div>
+                        <div class="skill-tag">n8n</div>
+                        <div class="skill-tag">AI Prompting</div>
+                        <div class="skill-tag">Notion</div>
+                        <div class="skill-tag">Excel VBA</div>
+                        <div class="skill-tag">Cursor</div>
+                        <div class="skill-tag">Low-Code</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="education-block reveal-up">
+                <h3 class="subsection-title">Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2025–2026</span>
+                        <div class="timeline-content">
+                            <h4>SKEMA Business School</h4>
+                            <p>Master 2 — MS Management de Projet et Programmes</p>
+                        </div>
+                        <span class="timeline-thesis">Data Fragmentation in B2B and Graph Solutions</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2023–2024</span>
+                        <div class="timeline-content">
+                            <h4>Université Paris 1 Panthéon-Sorbonne</h4>
+                            <p>M1 — Développement et aménagement des territoires</p>
+                        </div>
+                        <span class="timeline-thesis">Sustainable Tourism Development Strategies</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2022–2023</span>
+                        <div class="timeline-content">
+                            <h4>Université Paris-Sorbonne (Paris IV)</h4>
+                            <p>Géographie et aménagement</p>
+                        </div>
+                        <span class="timeline-thesis">Urban Planning & Spatial Analysis</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2018–2022</span>
+                        <div class="timeline-content">
+                            <h4>Moscow State University (MSU)</h4>
+                            <p>International Relations</p>
+                        </div>
+                        <span class="timeline-thesis">Diplomacy & International Economics</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="languages-block reveal-up">
+                <h3 class="subsection-title">Languages</h3>
+                <div class="lang-grid">
+                    <div class="lang-item">
+                        <span class="lang-name">Russian</span>
+                        <div class="lang-bar"><div class="lang-fill" data-width="100"></div></div>
+                        <span class="lang-level">C2</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">English</span>
+                        <div class="lang-bar"><div class="lang-fill" data-width="85"></div></div>
+                        <span class="lang-level">C1</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">French</span>
+                        <div class="lang-bar"><div class="lang-fill" data-width="85"></div></div>
+                        <span class="lang-level">C1</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Spanish</span>
+                        <div class="lang-bar"><div class="lang-fill" data-width="30"></div></div>
+                        <span class="lang-level">A2</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Italian</span>
+                        <div class="lang-bar"><div class="lang-fill" data-width="30"></div></div>
+                        <span class="lang-level">A2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="section-container">
+            <div class="section-label">
+                <span class="label-number">02</span>
+                <span class="label-text">Experience</span>
+                <span class="label-line"></span>
+            </div>
+            <div class="exp-list">
+                <div class="exp-card exp-featured reveal-up">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Digital Project Manager</h3>
+                            <span class="exp-company">INOVSHOP Group — Paris, FR</span>
+                        </div>
+                        <span class="exp-date">Jan 2025 – Present <span class="exp-duration">1 yr+</span></span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Managed 15 digital & phygital projects simultaneously in Agile environment (planning, operational tracking)</li>
+                        <li>Tracked maintenance tickets via Harvest & GitLab in coordination with technical teams</li>
+                        <li>Led website redesign of inovshop.com — stakeholder coordination, RACI roles, action tracking on Asana</li>
+                        <li>Supported Tab'Shop POS digitalization: ticket management, PDV data exports, platform maintenance</li>
+                        <li>Contributed to field deployments: mini-PC, routers, Raspberry Pi, digital signage hardware (slimscreen, LG, Android)</li>
+                    </ul>
+                    <div class="exp-gallery">
+                        <img src="img/inovshop-1.jpg" alt="Boulanger Multi-écoute" data-project="Boulanger — Multi-écoute" data-badge="INOVSHOP Group" data-desc="Connected multiple headphone brands to a single player to improve in-store active listening experience. Conducted phygital solution testing and assembled the full solution with step-by-step documentation." data-tags="Phygital,Boulanger,Active Listening,Testing">
+                        <img src="img/inovshop-2.jpg" alt="Amazon Parapharmacie" data-project="Amazon Parapharmacie — Italy" data-badge="INOVSHOP Group" data-desc="Digital signage deployment for Amazon's first physical store in Italy — Amazon Parapharmacie &amp; Beauty in Milan. Configured ~50 Slimscreen displays on Inovhub platform. Device/MAC association for centralized management. Media testing and on-site support for installed screens (stabilization, field assistance). Multi-site deployment across Italy." data-tags="Amazon,Slimscreen,Inovhub,Digital Signage,Italy,Multi-site">
+                        <img src="img/inovshop-3.jpg" alt="Inovshop digital display" data-project="Microsoft Xbox — FNAC" data-badge="INOVSHOP Group" data-desc="Digital signage deployment for Microsoft Xbox at FNAC stores across France. Configured ~30 Raspberry Pi 4 units and associated them on Inovhub platform for centralized management. Device/MAC association, media testing, and on-site support for installed screens (stabilization, field assistance). Multi-site deployment across France." data-tags="Microsoft,Xbox,FNAC,Raspberry Pi,Inovhub,France,Multi-site">
+                    </div>
+                    <div class="exp-tags">
+                        <span>Digital Signage</span><span>Agile</span><span>GitLab</span><span>Harvest</span><span>Raspberry Pi</span><span>RACI</span>
+                    </div>
+                </div>
+
+                <div class="exp-card reveal-up">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Director of Growth Department</h3>
+                            <span class="exp-company">TastyAlmaty — Almaty, KZ</span>
+                        </div>
+                        <span class="exp-date">Oct – Dec 2024</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Identified and pursued B2B partnerships with coworking spaces, gyms, and yoga studios in Almaty</li>
+                        <li>Market analysis & commercial offer preparation for healthy food delivery</li>
+                        <li>Built distribution network across the city for the food tech startup</li>
+                    </ul>
+                    <div class="exp-gallery">
+                        <img src="img/tasty-1.png" alt="TastyAlmaty food" data-project="TastyAlmaty — Healthy Food Delivery" data-badge="Startup" data-desc="Co-founded a healthy food delivery startup in Almaty, Kazakhstan. Built B2B partnerships with coworking spaces, gyms, and yoga studios. Developed distribution network across the city." data-tags="Food Tech,B2B,Growth,Almaty">
+                        <img src="img/tasty-2.png" alt="TastyAlmaty meals" data-project="TastyAlmaty — Meal Prep Service" data-badge="Startup" data-desc="Developed and scaled a healthy meal prep service targeting health-conscious professionals in Almaty. Managed client feedback loop to improve product quality." data-tags="Meal Prep,Health,Customer Feedback">
+                        <img src="img/tasty-3.png" alt="TastyAlmaty delivery" data-project="TastyAlmaty — Distribution Network" data-badge="Startup" data-desc="Built partnerships with coworking spaces, yoga studios, and sports clubs across Almaty for healthy food delivery distribution points." data-tags="Partnerships,Distribution,B2B">
+                    </div>
+                    <div class="exp-tags">
+                        <span>B2B Sales</span><span>Food Tech</span><span>Growth</span><span>Partnerships</span>
+                    </div>
+                </div>
+
+                <div class="exp-card reveal-up">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Client Relations Manager</h3>
+                            <span class="exp-company">Paris Olympic Games 2024</span>
+                        </div>
+                        <span class="exp-date">Jul – Aug 2024</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Managed client & guest relations during the Olympic Games</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Events</span><span>Client Relations</span><span>Olympics</span>
+                    </div>
+                </div>
+
+                <div class="exp-card reveal-up">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Digital Project Manager</h3>
+                            <span class="exp-company">GPTapBot</span>
+                        </div>
+                        <span class="exp-date">May – Jun 2024</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Co-created a Telegram chatbot unifying Midjourney, ChatGPT, DALL-E, file converter & text-to-speech in one interface</li>
+                        <li>Simplified access to top AI tools — no complicated registrations or expensive subscriptions</li>
+                        <li>First tap-to-ask model with gamified token earning system</li>
+                    </ul>
+                    <div class="exp-gallery">
+                        <img src="img/gptapbot-1.png" alt="GPTapBot mascot" data-project="GPTapBot — AI Telegram Bot" data-badge="Product" data-desc="Unified access to Midjourney, ChatGPT, DALL-E, file converter and text-to-speech in one Telegram bot. Simplified AI for everyone — no complex registrations or expensive subscriptions. First tap-to-ask model with gamified token earning." data-tags="AI,Telegram,ChatGPT,Midjourney,DALL-E">
+                        <img src="img/gptapbot-2.png" alt="GPTapBot interface" data-project="GPTapBot — Chat Interface" data-badge="Product" data-desc="Built an intuitive chat interface allowing users to interact with multiple AI models seamlessly. Integrated Midjourney image generation, ChatGPT conversations, and file conversion in a single bot." data-tags="UX,Bot Design,AI Integration">
+                    </div>
+                    <div class="exp-tags">
+                        <span>AI</span><span>Telegram Bot</span><span>Product</span><span>ChatGPT</span><span>Midjourney</span>
+                    </div>
+                </div>
+
+                <div class="exp-card reveal-up">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Sales Representative</h3>
+                            <span class="exp-company">Heliofold Solar</span>
+                        </div>
+                        <span class="exp-date">Sep 2023 – Jan 2024</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Built & managed commercial pipeline for energy/tech solutions</li>
+                        <li>Lead prospecting, presentations & closing deals</li>
+                    </ul>
+                    <div class="exp-gallery">
+                        <img src="img/heliofold-1.png" alt="HelioPort Solar Carports" data-project="HelioPort — Solar Car-Ports" data-badge="Heliofold Solar" data-desc="Solar carports with steel support columns, beams, and roofing elements. Deployable on retail, residential, and industrial parking lots. 3 kWp per parking lot." data-tags="Solar,Carports,B2B,Energy">
+                        <img src="img/heliofold-2.png" alt="HelioWatt Battery Storage" data-project="HelioWatt — Containerized Battery Storage" data-badge="Heliofold Solar" data-desc="Containerized ready-to-use battery storage units from 256 to 1024 kWh. LiFePO4 batteries, 8000+ cycles, supports on-grid and off-grid applications." data-tags="Battery,Storage,Energy,Industrial">
+                        <img src="img/heliofold-3.png" alt="HelioFold Solar System" data-project="HelioFold — Foldable On-Ground Solar System" data-badge="Heliofold Solar" data-desc="Pre-assembled and pre-wired solar module blocks, foldable and packed vertically. Customizable from 25 to 250 kWp. Enhanced land ratio per kWp." data-tags="Solar,Foldable,Green Energy,Innovation">
+                    </div>
+                    <div class="exp-tags">
+                        <span>Solar Energy</span><span>B2B Sales</span><span>Pipeline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="section-container">
+            <div class="section-label">
+                <span class="label-number">03</span>
+                <span class="label-text">Projects</span>
+                <span class="label-line"></span>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal-up gradient-border" data-color="orange" data-lightbox-img="img/meshly-1.png" data-project="Meshly — Network Graph" data-badge="SaaS Product" data-desc="Interactive graph visualization of your professional network. Filter by role (Analyst, Developer, Manager), add connections, import friends, and explore relationship clusters. Built with React and deployed on Render." data-tags="SaaS,Graph,React,Network,SKEMA">
+                    <div class="project-number">01</div>
+                    <h3>Meshly SaaS</h3>
+                    <p>SaaS platform for project managers — built during SKEMA Master's program. Streamlining PM workflows with modern tools.</p>
+                    <div class="project-tags">
+                        <span>SaaS</span><span>Project Management</span><span>SKEMA</span>
+                    </div>
+                    <div class="project-arrow">&rarr;</div>
+                </div>
+
+                <div class="project-card reveal-up gradient-border" data-color="white">
+                    <div class="project-number">02</div>
+                    <h3>GPTapBot</h3>
+                    <p>Unified access to Midjourney, ChatGPT, DALL-E, file converter & TTS in one Telegram bot. No complex registrations — simplified AI for everyone.</p>
+                    <div class="project-tags">
+                        <span>AI</span><span>Telegram</span><span>Product</span>
+                    </div>
+                    <div class="project-arrow">&rarr;</div>
+                </div>
+
+                <div class="project-card reveal-up gradient-border" data-color="orange">
+                    <div class="project-number">03</div>
+                    <h3>TastyAlmaty</h3>
+                    <p>Co-founded healthy food delivery startup. Built B2B partnerships with coworking spaces, gyms & yoga studios across Almaty.</p>
+                    <div class="project-tags">
+                        <span>Startup</span><span>Food Tech</span><span>Growth</span>
+                    </div>
+                    <div class="project-arrow">&rarr;</div>
+                </div>
+
+                <div class="project-card reveal-up gradient-border" data-color="white">
+                    <div class="project-number">04</div>
+                    <h3>Heliofold Solar</h3>
+                    <p>Built and managed commercial pipeline for solar energy solutions. Prospecting, presentations & deal closing in the energy/tech sector.</p>
+                    <div class="project-tags">
+                        <span>Solar Energy</span><span>B2B</span><span>Sales</span>
+                    </div>
+                    <div class="project-arrow">&rarr;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="section-container">
+            <div class="section-label">
+                <span class="label-number">04</span>
+                <span class="label-text">Services</span>
+                <span class="label-line"></span>
+            </div>
+            <div class="services-list">
+                <div class="service-item reveal-up">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Project Management</h3>
+                        <p>End-to-end project management using Agile/Scrum methodologies. From planning to delivery, with Jira, Asana, and Notion.</p>
+                    </div>
+                    <span class="service-number">01</span>
+                </div>
+
+                <div class="service-item reveal-up">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>AI & Automation</h3>
+                        <p>Workflow automation with n8n, AI chatbots, and low-code solutions. Optimize your operations with cutting-edge tools.</p>
+                    </div>
+                    <span class="service-number">02</span>
+                </div>
+
+                <div class="service-item reveal-up">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Development</h3>
+                        <p>Market analysis, B2B prospecting, partnership building, and commercial strategy across international markets.</p>
+                    </div>
+                    <span class="service-number">03</span>
+                </div>
+
+                <div class="service-item reveal-up">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Solutions</h3>
+                        <p>Digital signage, website development coordination, and Raspberry Pi configurations for hardware-software integration.</p>
+                    </div>
+                    <span class="service-number">04</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-container">
+            <div class="section-label">
+                <span class="label-number">05</span>
+                <span class="label-text">Contact</span>
+                <span class="label-line"></span>
+            </div>
+            <div class="contact-content">
+                <h2 class="contact-title char-reveal">Let's work<br><span class="text-orange">together.</span></h2>
+                <div class="contact-links reveal-up">
+                    <a href="mailto:maximegrachev@gmail.com" class="contact-link">
+                        <span class="contact-link-label">Email</span>
+                        <span class="contact-link-value">maximegrachev@gmail.com</span>
+                        <span class="contact-link-arrow">&rarr;</span>
+                    </a>
+                    <a href="tel:+33613763708" class="contact-link">
+                        <span class="contact-link-label">Phone</span>
+                        <span class="contact-link-value">+33 6 13 76 37 08</span>
+                        <span class="contact-link-arrow">&rarr;</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maxime-grachev-management-paris/" class="contact-link" target="_blank">
+                        <span class="contact-link-label">LinkedIn</span>
+                        <span class="contact-link-value">Maxime Grachev</span>
+                        <span class="contact-link-arrow">&rarr;</span>
+                    </a>
+                </div>
+                <div class="contact-location reveal-up">
+                    <span>Based in</span>
+                    <span class="text-orange">Paris, France</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <div class="lightbox-content">
+            <div class="lightbox-image">
+                <img id="lightboxImg" src="" alt="">
+            </div>
+            <div class="lightbox-info">
+                <span class="lightbox-badge" id="lightboxBadge"></span>
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDesc"></p>
+                <div class="lightbox-tags" id="lightboxTags"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span>&copy; 2026 Maxim Grachev</span>
+            <span>Designed with purpose</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
