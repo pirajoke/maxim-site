@@ -373,9 +373,12 @@ function showSlide(index) {
         });
     }
 
-    // Arrows
-    lightboxPrev.classList.toggle('visible', currentSlides.length > 1 && index > 0);
-    lightboxNext.classList.toggle('visible', currentSlides.length > 1 && index < currentSlides.length - 1);
+    // Arrows — always show both when multiple slides
+    const multi = currentSlides.length > 1;
+    lightboxPrev.classList.toggle('visible', multi);
+    lightboxNext.classList.toggle('visible', multi);
+    lightboxPrev.style.opacity = index > 0 ? '1' : '0.3';
+    lightboxNext.style.opacity = index < currentSlides.length - 1 ? '1' : '0.3';
 }
 
 function openLightbox(slides, startIndex) {
