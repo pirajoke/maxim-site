@@ -147,11 +147,13 @@ body::after {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.5px;
+    margin-right: 60px;
 }
 
 .nav-links {
     display: flex;
     gap: 40px;
+    margin-right: auto;
 }
 
 .nav-links a {
@@ -1616,6 +1618,7 @@ body::after {
 
 .legal-modal.active {
     display: flex;
+    cursor: auto;
 }
 
 .legal-modal-content {
@@ -1667,6 +1670,8 @@ body::after {
     color: var(--gray);
     font-size: 28px;
     cursor: pointer;
+    z-index: 10001;
+    padding: 8px 12px;
     transition: color 0.3s;
 }
 
