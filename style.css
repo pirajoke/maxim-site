@@ -1585,6 +1585,90 @@ body::after {
     color: var(--gray);
 }
 
+.footer-legal {
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.footer-legal:hover {
+    color: var(--orange);
+}
+
+/* Legal / Mentions légales Modal */
+.legal-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.legal-modal.active {
+    display: flex;
+}
+
+.legal-modal-content {
+    background: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    padding: 48px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.legal-modal-content h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.legal-modal-content h3 {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--orange);
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.legal-modal-content p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.legal-modal-content a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.legal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--gray);
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.legal-close:hover {
+    color: var(--orange);
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
     .about-grid {
