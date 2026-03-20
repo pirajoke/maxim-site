@@ -327,32 +327,16 @@ body::after {
     position: absolute;
     right: 0;
     top: 10%;
-    width: 340px;
-    height: 480px;
-    opacity: 0.06;
+    width: 380px;
+    height: 520px;
+    opacity: 0.12;
     pointer-events: none;
     user-select: none;
-    background-image:
-        /* Row 1 — full bricks */
-        repeating-linear-gradient(
-            90deg,
-            transparent 0px, transparent 2px,
-            rgba(255,255,255,0.7) 2px, rgba(255,255,255,0.7) 62px,
-            transparent 62px, transparent 64px
-        ),
-        /* Horizontal mortar lines */
-        repeating-linear-gradient(
-            180deg,
-            transparent 0px, transparent 28px,
-            rgba(255,255,255,0.5) 28px, rgba(255,255,255,0.5) 30px
-        );
-    background-size: 64px 30px;
-    /* Offset every other row by half a brick */
-    background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='64'%3E%3Crect x='2' y='2' width='62' height='28' rx='1' fill='none' stroke='white' stroke-width='1.5'/%3E%3Crect x='-32' y='34' width='62' height='28' rx='1' fill='none' stroke='white' stroke-width='1.5'/%3E%3Crect x='36' y='34' width='62' height='28' rx='1' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
-    background-size: 68px 64px;
-    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='64'%3E%3Crect x='2' y='2' width='66' height='28' rx='1' fill='none' stroke='white' stroke-width='1.2'/%3E%3Crect x='-34' y='34' width='66' height='28' rx='1' fill='none' stroke='white' stroke-width='1.2'/%3E%3Crect x='38' y='34' width='66' height='28' rx='1' fill='none' stroke='white' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-size: 72px 64px;
     -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 
 /* Horizontal scroll marquee */
