@@ -426,6 +426,17 @@ document.querySelectorAll('.project-card').forEach(card => {
             slides = slides.concat(slidesFromGallery(gallery));
         }
 
+        // Extra video slide
+        if (card.dataset.extraVideo) {
+            slides.push({
+                type: 'video', src: card.dataset.extraVideo,
+                project: card.dataset.extraVideoProject || '',
+                desc: card.dataset.extraVideoDesc || '',
+                badge: card.dataset.extraVideoBadge || '',
+                tags: card.dataset.extraVideoTags || ''
+            });
+        }
+
         if (slides.length > 0) openLightbox(slides, 0);
     });
 });
