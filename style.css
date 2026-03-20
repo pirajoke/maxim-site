@@ -1275,16 +1275,22 @@ body::after {
     min-width: 100px;
 }
 
-.contact-link-icon {
+.social-icons {
     display: flex;
-    align-items: center;
-    min-width: 100px;
-    color: var(--gray);
-    transition: color 0.3s;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
 }
 
-.contact-link:hover .contact-link-icon {
-    color: var(--white);
+.social-icons a {
+    color: var(--gray);
+    transition: color 0.3s, transform 0.3s;
+    display: flex;
+}
+
+.social-icons a:hover {
+    color: var(--orange);
+    transform: translateY(-3px);
     text-align: left;
 }
 
