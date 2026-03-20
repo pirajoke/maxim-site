@@ -380,18 +380,22 @@ body::after {
 
 /* Small language marquee */
 .marquee-sm {
-    padding: 20px 0;
+    width: 55%;
+    padding: 24px 0 0;
+    border: none;
 }
 
 .marquee-track-sm {
-    animation-duration: 14s;
+    animation-duration: 10s;
 }
 
 .marquee-track-sm span {
-    font-size: clamp(18px, 3vw, 36px);
-    padding: 0 28px;
-    letter-spacing: 2px;
-    font-weight: 600;
+    font-size: clamp(15px, 2vw, 24px);
+    padding: 0 20px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: lowercase;
+    font-style: italic;
 }
 
 .hero-content {
