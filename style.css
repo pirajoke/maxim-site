@@ -239,7 +239,7 @@ body::after {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 40px 48px 60px;
+    padding: 20px 48px 60px;
 }
 
 .hero-inner {
