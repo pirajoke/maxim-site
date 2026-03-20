@@ -322,18 +322,37 @@ body::after {
     }
 }
 
-.hero-bg-text {
+/* Brick wall decorative pattern */
+.hero-brick-wall {
     position: absolute;
-    font-family: var(--font-heading);
-    font-size: clamp(150px, 20vw, 350px);
-    font-weight: 700;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
+    right: 0;
+    top: 10%;
+    width: 340px;
+    height: 480px;
+    opacity: 0.06;
+    pointer-events: none;
     user-select: none;
+    background-image:
+        /* Row 1 — full bricks */
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px, transparent 2px,
+            rgba(255,255,255,0.7) 2px, rgba(255,255,255,0.7) 62px,
+            transparent 62px, transparent 64px
+        ),
+        /* Horizontal mortar lines */
+        repeating-linear-gradient(
+            180deg,
+            transparent 0px, transparent 28px,
+            rgba(255,255,255,0.5) 28px, rgba(255,255,255,0.5) 30px
+        );
+    background-size: 64px 30px;
+    /* Offset every other row by half a brick */
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='64'%3E%3Crect x='2' y='2' width='62' height='28' rx='1' fill='none' stroke='white' stroke-width='1.5'/%3E%3Crect x='-32' y='34' width='62' height='28' rx='1' fill='none' stroke='white' stroke-width='1.5'/%3E%3Crect x='36' y='34' width='62' height='28' rx='1' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: 68px 64px;
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 
 /* Horizontal scroll marquee */

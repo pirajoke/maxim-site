@@ -142,17 +142,16 @@ heroTl
         duration: 0.6
     }, '-=0.8');
 
-// Background text parallax
-gsap.to('.hero-bg-text', {
+// Brick wall parallax
+gsap.to('.hero-brick-wall', {
     scrollTrigger: {
         trigger: '.hero',
         start: 'top top',
         end: 'bottom top',
         scrub: 1
     },
-    y: -150,
-    opacity: 0,
-    scale: 1.1
+    y: -80,
+    opacity: 0
 });
 
 // Counter animation
