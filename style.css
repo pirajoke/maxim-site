@@ -329,14 +329,16 @@ body::after {
     top: 10%;
     width: 380px;
     height: 520px;
-    opacity: 0.12;
     pointer-events: none;
     user-select: none;
     z-index: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='64'%3E%3Crect x='2' y='2' width='66' height='28' rx='1' fill='none' stroke='white' stroke-width='1.2'/%3E%3Crect x='-34' y='34' width='66' height='28' rx='1' fill='none' stroke='white' stroke-width='1.2'/%3E%3Crect x='38' y='34' width='66' height='28' rx='1' fill='none' stroke='white' stroke-width='1.2'/%3E%3C/svg%3E");
-    background-size: 72px 64px;
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background:
+        linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px) 0 0 / 70px 32px,
+        linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px) 35px 32px / 70px 32px,
+        linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px) 0 0 / 70px 32px;
+    background-repeat: repeat;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
 }
 
 /* Horizontal scroll marquee */
