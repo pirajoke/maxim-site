@@ -392,13 +392,13 @@ body::after {
 }
 
 .marquee-sm .marquee-track-sm span {
-    font-size: clamp(20px, 3vw, 32px);
-    padding: 0 24px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-style: normal;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+    font-size: clamp(20px, 3vw, 32px) !important;
+    padding: 0 24px !important;
+    letter-spacing: 3px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-style: normal !important;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25) !important;
 }
 
 .hero-content {
