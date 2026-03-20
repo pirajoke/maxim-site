@@ -1319,6 +1319,11 @@ body::after {
     color: var(--gray);
     transition: color 0.3s, transform 0.3s;
     display: flex;
+    align-items: center;
+}
+
+.social-icons svg {
+    fill: currentColor;
 }
 
 .social-icons a:hover {
