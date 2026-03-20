@@ -378,27 +378,35 @@ body::after {
     100% { transform: translateX(-50%); }
 }
 
-/* Small language marquee */
-.marquee-sm {
-    width: 100%;
-    max-width: 640px;
-    padding: 20px 0 0;
-    border: none;
+/* Language marquee — standalone, no inheritance from .marquee-track */
+.lang-marquee {
     overflow: hidden;
+    padding: 20px 0 0;
+    max-width: 640px;
 }
 
-.marquee-track-sm {
-    animation-duration: 12s;
+.lang-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 12s linear infinite;
 }
 
-.marquee-sm .marquee-track-sm span {
-    font-size: clamp(20px, 3vw, 32px) !important;
-    padding: 0 24px !important;
-    letter-spacing: 3px !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    font-style: normal !important;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25) !important;
+.lang-marquee-track span {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    padding: 0 24px;
+    color: rgba(255, 255, 255, 0.12);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+}
+
+.lang-marquee-track span.orange {
+    -webkit-text-stroke: 1px rgba(255, 107, 43, 0.4);
+    color: rgba(255, 107, 43, 0.2);
 }
 
 .hero-content {
