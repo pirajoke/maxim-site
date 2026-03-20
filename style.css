@@ -947,7 +947,7 @@ body::after {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
     padding: 28px 20px;
     margin: 8px 0;
@@ -966,11 +966,11 @@ body::after {
 }
 
 .pipeline-icon {
-    width: 64px;
-    height: 64px;
-    min-width: 64px;
-    min-height: 64px;
-    border-radius: 16px;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1012,15 +1012,15 @@ body::after {
         padding: 20px 12px;
     }
     .pipeline-icon {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        min-height: 40px;
-        border-radius: 10px;
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        min-height: 56px;
+        border-radius: 14px;
     }
     .pipeline-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 28px;
+        height: 28px;
     }
     .pipeline-step span {
         font-size: 10px;
