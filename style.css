@@ -239,7 +239,7 @@ body::after {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 80px 48px 60px;
+    padding: 40px 48px 60px;
 }
 
 .hero-inner {
@@ -1044,6 +1044,7 @@ body::after {
     display: flex;
     flex-direction: column;
     min-height: 280px;
+    cursor: pointer;
 }
 
 .project-card::after {
@@ -1060,7 +1061,7 @@ body::after {
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-6px) perspective(800px) rotateY(var(--tilt-x, 0deg)) rotateX(var(--tilt-y, 0deg));
     border-color: rgba(255, 107, 43, 0.2);
 }
 
@@ -1272,6 +1273,18 @@ body::after {
     letter-spacing: 2px;
     color: var(--gray);
     min-width: 100px;
+}
+
+.contact-link-icon {
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    color: var(--gray);
+    transition: color 0.3s;
+}
+
+.contact-link:hover .contact-link-icon {
+    color: var(--white);
     text-align: left;
 }
 
@@ -1364,12 +1377,14 @@ body::after {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.lightbox-image img {
+.lightbox-image img,
+.lightbox-image video {
     width: 100%;
     height: auto;
     object-fit: contain;
     display: block;
     max-height: 80vh;
+    border-radius: 8px;
 }
 
 .lightbox-info {
@@ -1433,14 +1448,53 @@ body::after {
         gap: 24px;
         overflow-y: auto;
     }
-    .lightbox-image img {
+    .lightbox-image img,
+    .lightbox-image video {
         max-height: 40vh;
     }
+}
+
+/* Lightbox navigation arrows */
+.lightbox-prev,
+.lightbox-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    font-size: 36px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10002;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    line-height: 1;
+    padding: 0 0 3px 0;
+}
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 107, 43, 0.3);
+}
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-prev.visible,
+.lightbox-next.visible {
+    display: flex;
 }
 
 /* Make gallery images clickable */
 .exp-gallery img {
     cursor: none;
+}
+
+/* Hide gallery inside project cards — only show in lightbox */
+.project-card .exp-gallery {
+    display: none;
 }
 
 /* ========== FOOTER ========== */

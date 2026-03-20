@@ -329,55 +329,122 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========== LIGHTBOX ==========
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
+const lightboxVideo = document.getElementById('lightboxVideo');
 const lightboxTitle = document.getElementById('lightboxTitle');
 const lightboxDesc = document.getElementById('lightboxDesc');
 const lightboxBadge = document.getElementById('lightboxBadge');
 const lightboxTags = document.getElementById('lightboxTags');
 const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
 
-// Project cards with lightbox
-document.querySelectorAll('.project-card[data-lightbox-img]').forEach(card => {
-    card.style.cursor = 'pointer';
+// Slideshow state
+let currentSlides = [];
+let currentSlideIndex = 0;
+
+function showSlide(index) {
+    const slide = currentSlides[index];
+    currentSlideIndex = index;
+
+    // Show/hide media
+    if (slide.type === 'video') {
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = slide.src;
+    } else {
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = slide.src;
+        lightboxImg.alt = slide.alt || '';
+    }
+
+    // Info
+    lightboxTitle.textContent = slide.project || '';
+    lightboxDesc.textContent = slide.desc || '';
+    lightboxBadge.textContent = slide.badge || '';
+    lightboxTags.innerHTML = '';
+    if (slide.tags) {
+        slide.tags.split(',').forEach(tag => {
+            const span = document.createElement('span');
+            span.textContent = tag.trim();
+            lightboxTags.appendChild(span);
+        });
+    }
+
+    // Arrows
+    lightboxPrev.classList.toggle('visible', currentSlides.length > 1 && index > 0);
+    lightboxNext.classList.toggle('visible', currentSlides.length > 1 && index < currentSlides.length - 1);
+}
+
+function openLightbox(slides, startIndex) {
+    currentSlides = slides;
+    showSlide(startIndex || 0);
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Build slides from gallery images
+function slidesFromGallery(gallery) {
+    return Array.from(gallery.querySelectorAll('img[data-project]')).map(img => ({
+        type: 'image', src: img.src, alt: img.alt,
+        project: img.dataset.project, desc: img.dataset.desc,
+        badge: img.dataset.badge, tags: img.dataset.tags
+    }));
+}
+
+// Project cards click — build slides from card content
+document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
-        lightboxImg.src = card.dataset.lightboxImg;
-        lightboxImg.alt = card.dataset.project || '';
-        lightboxTitle.textContent = card.dataset.project || '';
-        lightboxDesc.textContent = card.dataset.desc || '';
-        lightboxBadge.textContent = card.dataset.badge || '';
-        lightboxTags.innerHTML = '';
-        if (card.dataset.tags) {
-            card.dataset.tags.split(',').forEach(tag => {
-                const span = document.createElement('span');
-                span.textContent = tag.trim();
-                lightboxTags.appendChild(span);
+        let slides = [];
+
+        // Video card
+        if (card.dataset.lightboxVideo) {
+            slides.push({
+                type: 'video', src: card.dataset.lightboxVideo,
+                project: card.dataset.project, desc: card.dataset.desc,
+                badge: card.dataset.badge, tags: card.dataset.tags
             });
         }
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+
+        // Single image card
+        if (card.dataset.lightboxImg) {
+            slides.push({
+                type: 'image', src: card.dataset.lightboxImg, alt: card.dataset.project,
+                project: card.dataset.project, desc: card.dataset.desc,
+                badge: card.dataset.badge, tags: card.dataset.tags
+            });
+        }
+
+        // Gallery inside card
+        const gallery = card.querySelector('.exp-gallery');
+        if (gallery) {
+            slides = slides.concat(slidesFromGallery(gallery));
+        }
+
+        if (slides.length > 0) openLightbox(slides, 0);
     });
 });
 
-document.querySelectorAll('.exp-gallery img[data-project]').forEach(img => {
+// Experience gallery images — click opens that image within its gallery context
+document.querySelectorAll('.exp-card .exp-gallery img[data-project]').forEach(img => {
     img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightboxTitle.textContent = img.dataset.project;
-        lightboxDesc.textContent = img.dataset.desc;
-        lightboxBadge.textContent = img.dataset.badge;
-
-        // Build tags
-        lightboxTags.innerHTML = '';
-        if (img.dataset.tags) {
-            img.dataset.tags.split(',').forEach(tag => {
-                const span = document.createElement('span');
-                span.textContent = tag.trim();
-                lightboxTags.appendChild(span);
-            });
-        }
-
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        const gallery = img.closest('.exp-gallery');
+        const slides = slidesFromGallery(gallery);
+        const index = slides.findIndex(s => s.src === img.src);
+        openLightbox(slides, index >= 0 ? index : 0);
     });
+});
+
+// Navigation
+lightboxPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentSlideIndex > 0) showSlide(currentSlideIndex - 1);
+});
+lightboxNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentSlideIndex < currentSlides.length - 1) showSlide(currentSlideIndex + 1);
 });
 
 lightboxClose.addEventListener('click', closeLightbox);
@@ -386,11 +453,17 @@ lightbox.addEventListener('click', (e) => {
 });
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft' && currentSlideIndex > 0) showSlide(currentSlideIndex - 1);
+    if (e.key === 'ArrowRight' && currentSlideIndex < currentSlides.length - 1) showSlide(currentSlideIndex + 1);
 });
 
 function closeLightbox() {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+    lightboxPrev.classList.remove('visible');
+    lightboxNext.classList.remove('visible');
 }
 
 // ========== TILT EFFECT ON PROJECT CARDS ==========
@@ -399,9 +472,11 @@ document.querySelectorAll('.project-card').forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `translateY(-6px) perspective(800px) rotateX(${y * -5}deg) rotateY(${x * 5}deg)`;
+        card.style.setProperty('--tilt-x', (x * 3) + 'deg');
+        card.style.setProperty('--tilt-y', (y * -3) + 'deg');
     });
     card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
     });
 });
