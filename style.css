@@ -178,6 +178,24 @@ body::after {
     width: 100%;
 }
 
+.nav-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.nav-social a {
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    transition: color 0.3s;
+}
+
+.nav-social a:hover {
+    color: var(--orange);
+}
+
 .nav-menu {
     display: none;
     flex-direction: column;
@@ -1580,6 +1598,9 @@ body::after {
 
 @media (max-width: 768px) {
     .nav-links {
+        display: none;
+    }
+    .nav-social {
         display: none;
     }
     .nav-menu {
