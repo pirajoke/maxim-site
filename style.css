@@ -181,9 +181,14 @@ body::after {
 .nav-social {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     margin-left: auto;
     margin-right: 0;
+}
+
+.nav-social svg {
+    width: 16px;
+    height: 16px;
 }
 
 .nav-social a {
