@@ -942,6 +942,87 @@ body::after {
     top: 11px;
 }
 
+/* Pipeline visualization */
+.ops-pipeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 28px 0;
+    margin: 8px 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pipeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.pipeline-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pipeline-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pipeline-step span {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pipeline-step small {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: -4px;
+}
+
+.pipeline-arrow {
+    font-size: 24px;
+    color: var(--orange);
+    font-weight: 300;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .ops-pipeline {
+        gap: 8px;
+        padding: 20px 12px;
+    }
+    .pipeline-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+    .pipeline-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    .pipeline-step span {
+        font-size: 11px;
+    }
+    .pipeline-step small {
+        display: none;
+    }
+    .pipeline-arrow {
+        font-size: 18px;
+    }
+}
+
 .exp-tags {
     display: flex;
     flex-wrap: wrap;
