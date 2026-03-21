@@ -1014,21 +1014,22 @@ body::after {
     flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .ops-pipeline {
-        gap: 8px;
-        padding: 20px 12px;
+        gap: 6px;
+        padding: 16px 8px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .pipeline-icon {
-        width: 56px;
-        height: 56px;
-        min-width: 56px;
-        min-height: 56px;
-        border-radius: 14px;
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        min-height: 52px;
+        border-radius: 12px;
     }
-    .pipeline-icon svg {
-        width: 28px;
-        height: 28px;
+    .pipeline-icon img {
+        border-radius: 12px;
     }
     .pipeline-step span {
         font-size: 10px;
@@ -1037,7 +1038,32 @@ body::after {
         display: none;
     }
     .pipeline-arrow {
-        font-size: 16px;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .ops-pipeline {
+        gap: 4px;
+        padding: 14px 6px;
+    }
+    .pipeline-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        border-radius: 10px;
+    }
+    .pipeline-icon img {
+        border-radius: 10px;
+    }
+    .pipeline-step span {
+        font-size: 9px;
+    }
+    .pipeline-arrow {
+        font-size: 12px;
+        margin-bottom: 8px;
     }
 }
 
