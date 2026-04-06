@@ -1,2 +1,7 @@
 .DS_Store
 .env
+# Untracked video variants (originals kept: gptapbot-video.mp4, tasty-video.mp4)
+img/gptapbot-demo.mp4
+img/gptapbot-video-low.mp4
+img/gptapbot-video-med.mp4
+img/gptapbot-video-web.mp4
