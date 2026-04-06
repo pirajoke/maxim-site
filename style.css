@@ -1107,6 +1107,15 @@ body::after {
     transition: all 0.3s;
 }
 
+.exp-gallery img.img-desktop {
+    width: 300px;
+    height: 200px;
+}
+
+.exp-gallery img.img-phone {
+    width: 120px;
+    height: 200px;
+}
 
 .exp-gallery img:hover {
     transform: scale(1.03);
