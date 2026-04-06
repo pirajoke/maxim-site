@@ -440,8 +440,21 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Experience gallery images — click opens that image within its gallery context
-document.querySelectorAll('.exp-card .exp-gallery img[data-project]').forEach(img => {
+// Gallery groups — click first visible image to browse all in group
+document.querySelectorAll('.gallery-group').forEach(group => {
+    group.addEventListener('click', () => {
+        const imgs = group.querySelectorAll('img[data-project]');
+        const slides = Array.from(imgs).map(img => ({
+            type: 'image', src: img.src, alt: img.alt,
+            project: img.dataset.project, desc: img.dataset.desc,
+            badge: img.dataset.badge, tags: img.dataset.tags
+        }));
+        openLightbox(slides, 0);
+    });
+});
+
+// Experience gallery images (non-grouped) — click opens that image within its gallery context
+document.querySelectorAll('.exp-card .exp-gallery > img[data-project]').forEach(img => {
     img.addEventListener('click', () => {
         const gallery = img.closest('.exp-gallery');
         const slides = slidesFromGallery(gallery);
