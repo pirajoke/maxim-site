@@ -1123,7 +1123,7 @@ body::after {
     cursor: pointer;
 }
 
-.gallery-group img:not(:first-of-type) {
+.gallery-group img ~ img {
     display: none;
 }
 
