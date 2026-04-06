@@ -1107,57 +1107,8 @@ body::after {
     transition: all 0.3s;
 }
 
-.exp-gallery img.img-desktop {
-    width: 300px;
-    height: 200px;
-}
-
-.exp-gallery img.img-phone {
-    width: 120px;
-    height: 200px;
-}
-
-.gallery-group {
-    position: relative;
-    flex-shrink: 0;
-    cursor: pointer;
-}
-
-.gallery-group[data-group="dashboard"] {
-    width: 300px;
-    height: 200px;
-}
-
-.gallery-group[data-group="telegram"] {
-    width: 120px;
-    height: 200px;
-}
-
-.gallery-group img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.gallery-group img:first-of-type {
-    position: relative;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.gallery-count {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    z-index: 2;
-    pointer-events: none;
+.exp-gallery img.gallery-hidden {
+    display: none;
 }
 
 .exp-gallery img:hover {
