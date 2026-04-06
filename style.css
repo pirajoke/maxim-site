@@ -1121,10 +1121,15 @@ body::after {
     position: relative;
     flex-shrink: 0;
     cursor: pointer;
+    overflow: hidden;
 }
 
-.gallery-group img ~ img {
-    display: none;
+.gallery-group img {
+    display: none !important;
+}
+
+.gallery-group img:first-of-type {
+    display: block !important;
 }
 
 .gallery-count {
